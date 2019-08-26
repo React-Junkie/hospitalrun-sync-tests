@@ -1,14 +1,6 @@
 language: node_js
 node_js:
 - 8
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token:
-    secure: JBBrdEl6GExyQSumokPN0nz3V9HCUc/4lbR1KurcXKyLs1FQ2yn231EQzuK7MZNnyYDpghofkNo2tCaJ6OKv8ZBHL7Fw6Ihdfl28xIbrFL+TxyacTZe8ohTzrRyDyNRooOUcD61qYx3LSAFIsWmwO8ilkUsUSU9zLBZdLmoHq+YY8Gg7EODtDlulE+lrULtoiMtHNR3CjNQPWuRmM8FYJfuKtggngc8M76K9uGu8V+wLwbPxLrs/txGWjTc9ohqRtL5np0VF5iqunXicW7cmTL445RVQc+aRYF281YAEyf9cmGyvAwZCBVuB37Q1EIbVSR1sWtXqLCMdUf+AgHciv63VFOVpLXReaATPdlLtjOBnJyWLaidrunJLge4B2Vs2UV61wQy8LHk4fq7KqcDBHKr5nD1fNNsWTDPdGoslKD068XeOtTx9AR4bHrxu77vfu5uaUd+xcZTmXUKkPr6neh8SD/5NyFJFs1qx9EjxbCZ05aFnq7g1q5lQKogP1BcPWmprxV2wd43rpaXo/Ufrpbgv+7SLduaiebj+6WxuuRTwrQwAw7SFRfp18OeT8dsg+hvSI1L/Gaxu8Ec7xUsQ1xXhdRL171TC4rpn7s/ABUXiAusVfcSHJeTqQknfzNk/ZAnHvGMWwfUYnnrA9O3XP0apQ/pVLd/YufsZ5n3V/d8=
-  keep_history: true
-  on:
-    branch: master
 install:
 - npm install -g quasar-cli
 - npm install
