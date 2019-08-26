@@ -1,0 +1,29 @@
+version: '2.1'
+services:
+  cloud-db:
+    image: "couchdb:latest"
+    ports:
+     - "5985:5984"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:5984/"]
+        interval: 10s
+        timeout: 90s
+        retries: 9
+  client-a-db:
+    image: "couchdb:latest"
+    ports:
+     - "5986:5984"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:5984/"]
+        interval: 10s
+        timeout: 90s
+        retries: 9
+  client-b-db:
+    image: "couchdb:latest"
+    ports:
+     - "5987:5984"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:5984/"]
+        interval: 10s
+        timeout: 90s
+        retries: 9

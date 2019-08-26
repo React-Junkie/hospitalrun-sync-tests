@@ -10,7 +10,7 @@ Vue.use(VueRouter)
  * directly export the Router instantiation
  */
 
-export default function (/* { store, ssrContext } */) {
+export default function (vue) {
   const Router = new VueRouter({
     scrollBehavior: () => ({ x: 0, y: 0 }),
     routes,
@@ -22,5 +22,32 @@ export default function (/* { store, ssrContext } */) {
     base: process.env.VUE_ROUTER_BASE
   })
 
+  // Patch Router with Authentication
+  Router.beforeEach((to, from, next) => {
+    console.log(to)
+    // Meta data flags
+    let isPublicRoute = to.matched.some(record => record.meta.public)
+    let isAuthRoute = to.matched.some(record => record.meta.auth)
+    // let isAdminRoute = to.matched.some(record => record.meta.admin)
+
+    // User flags
+    let isUserLoggedIn = true
+    // let isUserLoggedIn = true
+
+    // let isUserAdmin = isUserLoggedIn && getUser().admin === true
+    if (isUserLoggedIn && isAuthRoute) next()
+    // Redirect for Protected Routes
+    // if ((isAdminRoute && !isUserLoggedIn) || (isAuthRoute && !isUserLoggedIn)) {
+    //   next({
+    //     path: '/login'
+    //   })
+    // }
+
+    // Redirect for authenticated non-admins
+    // if (isUserLoggedIn && isAdminRoute && !isUserAdmin) next({ path: '/profile' })
+
+    // Passthrough
+    if (isPublicRoute) next()
+  })
   return Router
 }

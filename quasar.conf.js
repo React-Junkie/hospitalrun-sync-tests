@@ -6,6 +6,7 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
+      "vue-pouch"
     ],
 
     css: [
@@ -28,32 +29,42 @@ module.exports = function (ctx) {
       // iconSet: 'ionicons-v4',
       // lang: 'de', // Quasar language
 
-      // all: true, // --- includes everything; for dev only!
+      all: true, // --- includes everything; for dev only!
 
-      components: [
-        'QLayout',
-        'QHeader',
-        'QDrawer',
-        'QPageContainer',
-        'QPage',
-        'QToolbar',
-        'QToolbarTitle',
-        'QBtn',
-        'QIcon',
-        'QList',
-        'QItem',
-        'QItemSection',
-        'QItemLabel'
-      ],
-
-      directives: [
-        'Ripple'
-      ],
-
-      // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
+      // components: [
+      //   'QList',
+      //   'QItem',
+      //   'QItemSection',
+      //   'QItemLabel',
+      //   'QLayout',
+      //   'QHeader',
+      //   'QDrawer',
+      //   'QPageContainer',
+      //   'QPage',
+      //   'QToolbar',
+      //   'QToolbarTitle',
+      //   'QBtn',
+      //   'QIcon',
+      //   'QList',
+      //   'QItem',
+      //   'QItemSection',
+      //   'QItemLabel',
+      //   'QField',
+      //   'QAvatar',
+      //   'QSeparator',
+      //   'QCheckbox',
+      //   'QSlider',
+      //   'QToggle'
+      // ],
+      //
+      // directives: [
+      //   'Ripple'
+      // ],
+      //
+      // // Quasar plugins
+      // plugins: [
+      //   'Notify'
+      // ]
     },
 
     supportIE: false,
