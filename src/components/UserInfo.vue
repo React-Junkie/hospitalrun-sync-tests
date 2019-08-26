@@ -13,6 +13,7 @@
           label="Logout"
           push
           size="sm"
+          to="login"
           @click="$user.logout()"
           v-close-popup
         />

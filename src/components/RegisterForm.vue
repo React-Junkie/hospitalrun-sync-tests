@@ -3,7 +3,7 @@
     Register for our magic service!
     <q-input v-model="username" label="Username"></q-input>
     <q-input v-model="secret" label="Password"></q-input>
-    <q-input v-model="organization" label="Organization"></q-input>
+    <q-input v-model="organization" label="Organization" placeholder="HospitalRun"></q-input>
     <q-btn label="Go Back" v-go-back=" '/' "/>
     <q-btn label="Register" @click="submitRegistration"/>
     <q-dialog v-model="hasError" persistent>

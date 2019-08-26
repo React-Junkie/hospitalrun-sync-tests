@@ -61,10 +61,11 @@ export default class User {
    * Logout of this device
    */
   logout () {
-    this.id = null
-    this.name = null
-    this.rev = null
-    this.device.lastLogin = null
+    this.id = undefined
+    this.name = undefined
+    this.rev = undefined
+    this.organization = undefined
+    this.device.lastLogin = undefined
     // Maybe do some cleanup
     // if (this.catalog) {
     //   await this.catalog.destroy()
@@ -73,6 +74,7 @@ export default class User {
 
   /**
    * Login to this device
+   *   Must have a User, Organization, and Device
    * @param secret
    * @returns {Promise.<void>}
    */
