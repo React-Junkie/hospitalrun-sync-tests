@@ -78,13 +78,13 @@ export default class User {
    */
   async loginWithSecret (secret) {
     this.id = this.generateId()
-    await this.device.initKeyStore({ user: this, secret })
-    let readKeyStoreTest = await this.device.canReadKeystore({ user: this })
-    console.log(readKeyStoreTest)
-    if (!readKeyStoreTest) {
-      this.id = null
-      alert('Bad Password')
-    } else this.device.lastLogin = this.name
+    this.device.registerUserToDevice({ user: this, secret })
+    // let readKeyStoreTest = await this.device.canReadKeystore({ user: this })
+    // console.log(readKeyStoreTest)
+    // if (!readKeyStoreTest) {
+    //   this.id = null
+    //   alert('Bad Password')
+    // } else this.device.lastLogin = this.name
   }
 
   /**
