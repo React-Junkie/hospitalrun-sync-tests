@@ -204,7 +204,7 @@ export default class Device {
     let { id, meta } = await this.getDeviceFingerprint()
     this.id = id
     this.meta = meta
-    this.databases = await PouchDB.allDbs()
+    await this.updateDBIndex()
 
     if (this.databases.length > 0) {
       this.databases.forEach((databaseString) => {
@@ -253,5 +253,9 @@ export default class Device {
         resolve({ meta, id: Fingerprint2.x64hash128(values.join(''), 31) })
       })
     })
+  }
+
+  async updateDBIndex () {
+    this.databases = await PouchDB.allDbs()
   }
 }
