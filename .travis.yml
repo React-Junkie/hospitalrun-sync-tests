@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- 8
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  keep_history: true
+  on:
+    branch: master
+global:
+  env:
+    secure: I6go4T4rMYPOEaogfOiM+/GR2zo1MmjhPZBEZ9TTITo6y8nttqAhQZW3yVO0ONO8yYfbczR/gtiB14eyhYtDmSUpNz6m2CEaMzUhy+PFxFyx2UXcF1HlK7ueb+C7GiHYsvodP3QPElg+s87HDwVf87tv2fKx0f2ZXixyVv/ginJXBqMdhhLJno9fZdvIftvIlXyuAiY9A7MxPqMxThzKuln2Qcb4TWQDEptTOir5zZNiSGDN8h1M/at8TUByYgLVZhCSGVUmWtRE5PTYW8wyovfuG0rvgjwSw197uSfIVs7J3iJT6/uocerCV7pFqheOP6NMl4Dmu/OjGpvyvU+bj4Vbsp0O3MqFcVHBMxU2fghb7Laioz4H3d1H/MRVFX0g/16rmrhrcAAw+sjrM8CfFX2qXuRXS03iUAwMnezVfXHx2bL0lhC3Y089Uw6trY8L65ZT5WFDVzZ0H7q531UCduhMJ1Fh991X73jD4y4CE5CfuivUXHfnVyP+u2zCuG5bAT0uWcz8W37nKqhBdv3CWM69XKMq4ZMr2ZfueUUBG8+oW8wpF/9hRX04vJalgYKF4+AhJXbAnNnT+077YXiYTDClnddn7LK/mN+o0nn49ieWdq8FP+jz2oMmcqhOuNcISi2+lJ6nBnDmSxWUsTbGt8uY988dfdgNgWj9gpMufEs=
+install:
+    - npm install -g quasar-ci
+    - npm install
+    - quasar build
+    - rm -rf ./docs
+    - mkdir ./docs
+    - cp -R ./dist/spa/* ./docs
