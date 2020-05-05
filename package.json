@@ -29,7 +29,7 @@
     "pouchdb-security-helper": "^2.1.2",
     "pouchdb-users": "^1.0.6",
     "quasar": "^1.0.0",
-    "tweetnacl": "^1.0.1",
+    "tweetnacl": "^1.0.3",
     "vue-global-var": "^1.0.0",
     "vue-pouch": "0.0.23",
     "vue-status-indicator": "^1.2.1"
